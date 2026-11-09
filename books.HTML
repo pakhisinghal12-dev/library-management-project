@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="book.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>BOOKS</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="nav">
+                <img src="logo.png" alt="Library Logo">
+                <div>
+                <h1 class="line"> MY LIBRARY</h1>
+                <h3 class="line"> DISCOVER.READ.GROW.</h3>
+                    </div>
+            </div>
+        <nav>
+            <div class="nav-links">
+                <a href="home.html" class="active">Home</a>
+                <a href="books.html" class="active">Books</a>
+                <a href="about.html" class="active">About</a>
+                <a href="students.html" class="active">Students</a>
+                <a href="admin.html" class="active">Admin</a>
+                <a href="search.html" class="active">Search</a>
+            </div>
+        </nav>
+        </div>
+    </header>
+    <hr>
+    <main>
+       <section class="page-heading">
+        <h1 class="explore"> EXPLORE OUR BOOKS</h1>
+        <p class="vast">Discover a vast collection of books across various genres and subjects.</p>
+       </section>
+       <hr>
+       <section class="search-section">
+           <form id="search-form">
+               <input type="text" placeholder="Enter book title or author..." id="search-input" class="search-bar">
+               <button type="submit" class="search-btn">Search</button>
+           </form>
+       </section>
+       <section class="categories">
+        <h1 class="bb"> BROWSE BY CATEGORY</h1>
+        <div class="category-container">
+            <a href="#" class="category-link">
+            <div class="category" data-category="children's-adult">
+        <div class="icon-box green">
+            
+                <i data-lucide="database"></i>
+    
+        </div>
+        <h3>Children's &<br> Young Adult</h3>
+    </div>
+    </a>
+    <a href="#" class="category-link">
+    <div class="category" data-category="fiction">
+        <div class="icon-box pink">
+                <i data-lucide="file-text"></i>
+        
+        </div>
+        <h3>Literature &<br> Fiction</h3>
+    </div>
+    </a>
+    <a href="#" class="category-link">
+
+    <div class="category" data-category="exams">
+        <div class="icon-box teal">
+        
+                <i data-lucide="box"></i>
+        
+        </div>
+        <h3>Competitive<br> Exams</h3>
+    </div>
+    </a>
+    <a href="#" class="category-link">
+
+    <div class="category" data-category="school">
+        <div class="icon-box orange">
+        
+                <i data-lucide="book-text"></i>
+            
+        </div>
+        <h3>School<br> Textbooks</h3>
+    </div>
+    </a>
+    <a href="#" class="category-link">
+
+    <div class="category" data-category="higher-edu">
+        <div class="icon-box purple">
+            
+                <i data-lucide="graduation-cap"></i>
+        
+        </div>
+        <h3>Higher<br> Education</h3>
+    </div>
+    </a>
+    <a href="#" class="category-link" >
+
+    <div class="category" data-category="self-help">
+        <div class="icon-box green2">
+        
+                <i data-lucide="arrow-left-right"></i>
+
+        </div>
+        <h3>Self-help &<br> Personal Growth</h3>
+    </div>
+    </a>
+    <a href="#" class="category-link" >
+
+    <div class="category" data-category="business">
+        <div class="icon-box pink">
+                <i data-lucide="building-2"></i>
+        </div>
+        <h3>Business &<br> Management</h3>
+    </div>
+    </a>
+    <a href="#" class="category-link">
+
+    <div class="category" data-category="all">
+        <div class="icon-box navy">
+        
+                <i data-lucide="ellipsis"></i>
+            
+        </div>
+        <h3>All<br> Books</h3>
+    </div>
+    </a>
+    <script>lucide.createIcons()</script>
+        </div>
+
+       </section>
+       <hr>
+       <section class="filter-section">
+        <h2 class="filter-heading">Our Collection</h2>
+        <div class="filter-options">
+            <select id="avaibility-filter">
+                <option value="all">All Books</option>
+                <option value="available">Available</option>
+                <option value="unavailable">Unavailable</option>
+            </select>
+            <select id="category-filter">
+                <option value="all">All Categories</option>
+                <option value="children's-adult">Children's & Young Adult</option>
+                <option value="fiction">Literature & Fiction</option>
+                <option value="exams">Competitive Exams</option>
+                <option value="school">School Textbooks</option>
+                <option value="higher-edu">Higher Education</option>
+                <option value="self-help">Self-help & Personal Growth</option>
+                <option value="business">Business & Management</option>
+            </select>   
+            <select id="sort-filter">
+                <option value="default">Sort By</option>
+                <option value="title-asc">Title (A-Z)</option>
+                <option value="title-desc">Title (Z-A)</option>
+                <option value="author-asc">Author (A-Z)</option>
+                <option value="author-desc">Author (Z-A)</option>
+            </select>
+        </div>
+       </section>
+       <section class="books-section">
+        <div class="books-container" id="books-container">
+            <!-- Books will be dynamically inserted here -->
+        </div>
+        <p id="no-results" hidden>No books found.</p>
+       </section>
+       </main>
+       <hr>
+       <footer class="footer">
+        <p>&copy; 2024 My Library. All rights reserved.</p>
+         </footer>
+         <script src="books.js"></script>
+
+    
+</body>
+</html>
