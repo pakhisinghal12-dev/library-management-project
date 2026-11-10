@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOK-DETAILS</title>
+    <link rel="stylesheet" href="book-details.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="nav">
+                <img src="logo.png" alt="Library Logo">
+                <div>
+                <h1 class="line"> MY LIBRARY</h1>
+                <h3 class="line"> DISCOVER.READ.GROW.</h3>
+                    </div>
+            </div>
+        <nav>
+            <div class="nav-links">
+                <a href="home.html" class="active">Home</a>
+                <a href="books.html" class="active">Books</a>
+                <a href="about.html" class="active">About Us</a>
+                <a href="students.html" class="active">Students</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="search.html" class="active">Search</a>
+            </div>
+        </nav>
+        </div>
+        <hr>
+        <nav>
+            <section class="breadcrumb-nav">
+                <div class="breadcrumb">
+                    <a href="home.html">Home</a>
+                    <span class="separator">></span>
+                    <a href="books.html">Books</a>
+                    <span class="separator">></span>
+                    <span class="current-page">Book Details</span>
+
+                </div>
+
+            </section>
+            <hr>
+        </nav>
+    </header>
+    <main>
+
+        <section>
+            <div class="book-details-container">
+                <div class="book-image">
+                    <img id="book-cover" src="" alt="Book Cover">
+                </div>
+                <div class="book-info">
+                    <h1 class="book-title" id="book-title"></h1>
+                    <p class="book-author"><strong>Author:</strong> <span id="book-author" class="author"></span></p>
+                    <div class="book-description-container"><p class="book-description" id="book-description"></p></div>
+                    <p class="book-genre" ><strong>Genre:</strong> <span class='genre' id="book-genre"></span></p>
+                    <p class="book-published"><strong>Published:</strong> <span id="book-published" class="published"></span></p>
+                    <p class="book-avaibility"><strong>Avaibility:</strong><span id="book-avaibility" class="avaibility"></span></p>
+                    <button class="borrow-btn">Borrow this Book</button>
+                </div>
+
+            </div>
+        
+        </section>
+        <section>
+           <a href="books.HTML" class="backa"> <button class="back">Back to Books</button></a>
+        </section>
+        <hr>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 My Library. All rights reserved.</p>
+         </footer>
+         <script src="books-details.js"></script>
+    </body>
