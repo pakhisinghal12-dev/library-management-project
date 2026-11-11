@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:;
+    background: #f5f7fa;
+    color: #333;
+}
+
+header {
+    background: white;
+    padding: 20px 5%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav img {
+    width: 65px;
+}
+
+.nav h1 {
+    color:rgb(77, 149, 152);
+}
+
+.nav h3 {
+    color:rgb(77, 149, 152);
+    font-size: 12px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgb(77, 149, 152);
+    font-weight: bold;
+    font-size: 25px
+}
+
+.nav-links a:hover {
+    color: #d49b40;
+}
+
+.about-hero {
+    background:rgb(77, 149, 152);
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.about-hero h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.about-intro {
+    text-align: center;
+    padding: 60px 12%;
+}
+
+.about-intro h1,
+.services h1,
+.why-us h1 {
+    color: rgb(77, 149, 152);
+    margin-bottom: 25px;
+}
+
+.about-intro p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.mission-section {
+    padding: 50px 7%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.mission-card {
+    background: white;
+    padding: 35px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.mission-card i {
+    color: #d49b40;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.mission-card h2 {
+    color: rgb(11, 112, 115);
+    margin-bottom: 15px;
+}
+
+.mission-card p {
+    line-height: 1.6;
+}
+
+.services {
+    padding: 50px 7%;
+    text-align: center;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.service-box {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+}
+
+.service-box i {
+    color: #d49b40;
+    margin-bottom: 15px;
+}
+
+.service-box h3 {
+    color: rgb(11, 112, 115);
+    margin-bottom: 12px;
+}
+
+.why-us {
+    background: white;
+    padding: 50px;
+    text-align: center;
+}
+
+.why-us p {
+    margin: 15px;
+    font-size: 17px;
+}
+
+footer {
+    background:rgb(11, 112, 115) ;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    line-height: 2;
+}
+
+@media(max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .mission-section {
+        grid-template-columns: 1fr;
+    }
+
+    .service-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
