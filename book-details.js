@@ -250,13 +250,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const wishlistBtn = document.getElementById("wishlist-btn");
 
-wishlistBtn.addEventListener("click", function() {
-    wishlistBtn.classList.toggle("active");
 
-    if (wishlistBtn.classList.contains("active")) {
-        wishlistBtn.innerHTML = "Added to Wishlist";
-    } else {
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+if (wishlist.includes(book.id)) {
+    wishlistBtn.classList.add("active");
+    wishlistBtn.innerHTML = "Added to Wishlist";
+}
+
+
+wishlistBtn.addEventListener("click", function() {
+
+    if (wishlist.includes(book.id)) {
+
+        
+        wishlist = wishlist.filter(id => id !== book.id);
+
+        wishlistBtn.classList.remove("active");
         wishlistBtn.innerHTML = " Add to Wishlist";
+
+    } else {
+
+        
+        wishlist.push(book.id);
+
+        wishlistBtn.classList.add("active");
+        wishlistBtn.innerHTML = "Added to Wishlist";
     }
+
+    
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
 });
 });
