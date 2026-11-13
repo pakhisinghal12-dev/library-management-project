@@ -261,3 +261,10 @@ color:rgb(11, 112, 115);
     text-align: center;
     
 }
+ .rights {
+    background-color: rgb(11, 112, 115);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
