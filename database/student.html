@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management - My Library</title>
+
+    <link rel="stylesheet" href="student.css">
+
+</head>
+
+<body>
+
+    <!-- HEADER SAME AS HOME PAGE -->
+
+    <header>
+        <div class="header-container">
+
+            <div class="nav">
+
+                <img src="logo.png" alt="Library Logo">
+
+                <div>
+                    <h1 class="line">MY LIBRARY</h1>
+                    <h3 class="line">DISCOVER.READ.GROW.</h3>
+                </div>
+
+            </div>
+
+            <nav>
+                <div class="nav-links">
+
+                    <a href="home.html">Home</a>
+                    <a href="books.html">Books</a>
+                    <a href="about.html">About Us</a>
+                    <a href="student.html" class="active">Students</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="search.html">Search</a>
+
+                </div>
+            </nav>
+
+        </div>
+    </header>
+
+    <hr>
+
+    <!-- STUDENT MANAGEMENT SECTION -->
+
+    <div class="container">
+
+        <h2>Student Management</h2>
+
+        <!-- SUMMARY CARDS -->
+
+        <div class="summary">
+
+            <div class="card">
+                <h3 id="totalStudents">0</h3>
+                <p>Total Students</p>
+            </div>
+
+            <div class="card">
+                <h3 id="totalBorrowed">0</h3>
+                <p>Books Borrowed</p>
+            </div>
+
+            <div class="card">
+                <h3 id="totalReturned">0</h3>
+                <p>Books Returned</p>
+            </div>
+
+        </div>
+
+        <!-- STUDENT FORM -->
+
+        <section class="form-section">
+
+            <h3 id="formHeading">Add New Student / Issue Book</h3>
+
+            <form id="studentForm">
+
+                <div class="form-grid">
+
+                    <input type="text" id="studentId"
+                        placeholder="Student ID" required>
+
+                    <input type="text" id="studentName"
+                        placeholder="Student Name" required>
+
+                    <input type="text" id="fatherName"
+                        placeholder="Father's Name">
+
+                    <input type="email" id="email"
+                        placeholder="Email Address" required>
+
+                    <input type="tel" id="mobile"
+                        placeholder="Mobile Number" required>
+
+                    <input type="text" id="course"
+                        placeholder="Course / Branch">
+
+                    <input type="text" id="bookId"
+                        placeholder="Book ID" required>
+
+                    <input type="text" id="bookName"
+                        placeholder="Book Name" required>
+
+                    <label>
+                        Borrow Date
+                        <input type="date" id="borrowDate" required>
+                    </label>
+
+                    <label>
+                        Due Date
+                        <input type="date" id="dueDate" required>
+                    </label>
+
+                    <label>
+                        Return Date
+                        <input type="date" id="returnDate">
+                    </label>
+
+                </div>
+
+                <button type="submit" id="submitBtn">
+                    Add Student
+                </button>
+
+                <button type="button" id="cancelBtn"
+                    onclick="resetForm()" style="display:none;">
+                    Cancel Edit
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- STUDENT INFORMATION TABLE -->
+
+        <section class="table-section">
+
+            <h3>All Students Information</h3>
+
+            <input type="text" id="searchInput"
+                placeholder="Search by Student ID, Name or Book Name">
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Student Name</th>
+                            <th>Mobile</th>
+                            <th>Book ID</th>
+                            <th>Book Name</th>
+                            <th>Borrow Date</th>
+                            <th>Due Date</th>
+                            <th>Return Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="student.js"></script>
+
+</body>
+</html>
