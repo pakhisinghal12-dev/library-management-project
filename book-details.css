@@ -19,6 +19,13 @@
     margin-left:auto;
 
 }
+.nav img{
+    width:65px;
+}
+.nav-links a:hover {
+    color: #d49b40;
+}
+
 .active {
     text-decoration: none;
     color:rgb(77, 149, 152);
@@ -70,7 +77,7 @@
 }
 .book-title{
     font-size:60px;
-    color:rgb(77, 149, 152);
+    color:rgb(11, 112, 115);;
     margin-bottom: 30px;
 }
 .book-author{
@@ -179,4 +186,13 @@
 .wishlist.active {
     background-color: rgb(77, 149, 152);
     color: white;
+}
+.wishlist:hover{
+     background-color: rgb(77, 149, 152);
+    cursor: pointer;
+}
+.buttons{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
 }

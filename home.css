@@ -19,12 +19,19 @@
     margin-left:auto;
 
 }
+.nav img{
+    width:65px;
+}
 .active {
     text-decoration: none;
     color:rgb(77, 149, 152);
     font-size:20px;
 
 }
+.nav-links a:hover {
+    color: #d49b40;
+}
+
 .line{
     color:rgb(77, 149, 152);
     margin-top: 5px;

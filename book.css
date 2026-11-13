@@ -30,6 +30,13 @@
     margin-top: 5px;
     margin-bottom: 2px;
 }
+.nav img{
+    width:65px;
+}
+.nav-links a:hover {
+    color: #d49b40;
+}
+
 .page-heading{
     background-color: rgb(150, 218, 220);
     color: white;
