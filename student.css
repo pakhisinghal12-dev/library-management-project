@@ -1,0 +1,310 @@
+/* GENERAL SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: rgb(77, 149, 152);
+}
+
+
+/* HEADER - SAME AS HOME PAGE */
+
+header {
+    background-color: white;
+    padding: 15px 0;
+}
+
+.header-container {
+    width: 90%;
+    margin: auto;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+
+.line {
+    color: rgb(77, 149, 152);
+}
+
+.nav h1 {
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+.nav h3 {
+    font-size: 14px;
+    margin-top: 5px;
+    letter-spacing: 2px;
+}
+
+
+/* NAVIGATION BAR */
+
+nav {
+    margin-top: 20px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgb(77, 149, 152);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 5px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: rgb(77, 149, 152);
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: #ddd;
+}
+
+
+/* MAIN CONTAINER */
+
+.container {
+    width: 90%;
+    margin: 35px auto;
+}
+
+.container > h2 {
+    text-align: center;
+    font-size: 30px;
+    color: rgb(77, 149, 152);
+    margin-bottom: 30px;
+}
+
+
+/* SUMMARY CARDS */
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgb(77, 149, 152);
+    border-top: 4px solidrgb(77, 149, 152);
+}
+
+.card h3 {
+    font-size: 30px;
+    color: rgb(77, 149, 152);
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #666;
+}
+
+
+/* FORM SECTION */
+
+.form-section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 35px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.form-section h3 {
+    color: rgb(77, 149, 152);
+    font-size: 23px;
+    margin-bottom: 25px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.form-grid input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.form-grid input:focus {
+    outline: none;
+    border-color: #e67e22;
+}
+
+.form-grid label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+}
+
+
+/* BUTTONS */
+
+button {
+    background-color: rgb(77, 149, 152);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin-top: 25px;
+    margin-right: 10px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #e67e22;
+}
+
+
+/* TABLE SECTION */
+
+.table-section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.table-section h3 {
+    color: #173b57;
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+
+/* SEARCH INPUT */
+
+#searchInput {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #e67e22;
+}
+
+
+/* TABLE */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1100px;
+}
+
+thead {
+    background-color: rgb(77, 149, 152);
+    color: white;
+}
+
+th, td {
+    padding: 14px 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f5f8;
+}
+
+tbody tr:hover {
+    background-color: #eaf1f7;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .summary {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .form-section,
+    .table-section {
+        padding: 18px;
+    }
+
+}
