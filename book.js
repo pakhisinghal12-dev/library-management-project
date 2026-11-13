@@ -329,7 +329,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             card.append(cover, details);
 
-            fragment.appendChild(card);
+// Open the details page of the selected book
+card.addEventListener("click", () => {
+    window.location.href = `book-details.html?id=${book.id}`;
+});
+
+card.style.cursor = "pointer";
+
+fragment.appendChild(card);
 
         });
 
