@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+ <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="main">
+   <header>
+        <div class="container">
+            <div class="nav">
+                <img src="logo.png" alt="Library Logo">
+                <div>
+                <h1 class="line"> MY LIBRARY</h1>
+                <h3 class="line"> DISCOVER.READ.GROW.</h3>
+                    </div>
+            </div>
+        <nav>
+            <div class="nav-links">
+                <a href="home.html" class="active">Home</a>
+                <a href="books.html" class="active">Books</a>
+                <a href="about.html" class="active">About Us</a>
+                <a href="students.html" class="active">Students</a>
+                <a href="admin.html" class="active">Admin</a>
+            </div>
+        </nav>
+        </div>
+    </header>
+    <hr>
+    <br>
+    <section class="title">
+      <h1>Admin Panel</h1>
+    </section>
+    <br>
+    <hr>
+    <div id="cards" class="cards"></div>
+
+    <section class="panel">
+      <h3>Needs attention</h3>
+      <ul id="dash-notes" class="notes"></ul>
+    </section>
+
+    <section class="panel">
+      <h3>Book Management</h3>
+      <form id="book-form" class="inline-form">
+        <input id="book-title" placeholder="Title" required>
+        <input id="book-author" placeholder="Author" required>
+        <input id="book-copies" type="number" min="1" placeholder="Copies" required>
+        <button class="btn" type="submit">Add book</button>
+      </form>
+      <input id="book-search" class="search" placeholder="Search by title or author...">
+      <div id="books-table"></div>
+    </section>
+
+    <section class="panel">
+      <h3>Student Management</h3>
+      <input id="student-search" class="search" placeholder="Search by name, email or ID...">
+      <div id="students-table"></div>
+      <div id="student-profile"></div>
+    </section>
+
+    <section class="panel">
+      <h3>Issue &amp; Return Management</h3>
+      <form id="issue-form" class="inline-form">
+        <select id="issue-student"></select>
+        <select id="issue-book"></select>
+        <button class="btn" type="submit">Issue book</button>
+      </form>
+      <div id="issues-table"></div>
+    </section>
+
+    <section class="panel">
+      <h3>Fine Management</h3>
+      <p class="hint">Fine rule: Rs. 5 per day after the due date.</p>
+      <div id="fines-table"></div>
+      <h4>Payment history</h4>
+      <div id="payments-table"></div>
+    </section>
+
+     <section class="panel">
+      <h3>Reservation Management</h3>
+      <div id="reservations-table"></div>
+    </section>
+    <script src="admin.js"></script>
+  </div>
+</body>
+</html>
