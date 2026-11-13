@@ -218,7 +218,29 @@ document.addEventListener("DOMContentLoaded", () => {
         "self-help": "Self-help & Personal Growth",
         business: "Business & Management"
     };
+    async function getBookCover(title) {
 
+    try {
+        const response = await fetch(
+            `https://openlibrary.org/search.json?title=${encodeURIComponent(title)}&limit=1`
+        );
+
+        const data = await response.json();
+
+        if (data.docs.length > 0 && data.docs[0].cover_i) {
+
+            return `https://covers.openlibrary.org/b/id/${data.docs[0].cover_i}-M.jpg`;
+        }
+
+        return "images/default-book.jpg";
+
+    } catch (error) {
+
+        console.log("Error fetching book cover:", error);
+
+        return "images/default-book.jpg";
+    }
+}
 
     // -------------------- DISPLAY BOOKS --------------------
 
@@ -249,17 +271,25 @@ document.addEventListener("DOMContentLoaded", () => {
             card.className = "book-card";
 
 
-            // Book Cover
+       
 
-            const cover = document.createElement("div");
+           // Book Cover
 
-            cover.className = "book-cover";
+const cover = document.createElement("div");
 
-            cover.setAttribute("aria-hidden", "true");
+cover.className = "book-cover";
 
-            cover.textContent = "📚";
+const image = document.createElement("img");
 
+image.alt = book.title;
 
+image.src = "images/default-book.jpg";
+
+getBookCover(book.title).then((imageUrl) => {
+    image.src = imageUrl;
+});
+
+cover.appendChild(image);
             // Book Details
 
             const details = document.createElement("div");
