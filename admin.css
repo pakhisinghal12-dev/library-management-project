@@ -53,6 +53,9 @@ body{
     margin-top: 5px;
     margin-bottom: 2px;
 }
+.nav-links a:hover {
+    color: #d49b40;
+}
 .title {
     background-color: rgb(150, 218, 220);
     color: white;
