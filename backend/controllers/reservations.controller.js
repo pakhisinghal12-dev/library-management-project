@@ -80,7 +80,94 @@ const getMyReservations = async (req, res) => {
     }
 };
 
+
+// ======================================
+// GET ALL RESERVATIONS (ADMIN)
+// ======================================
+const getAllReservations = async (req, res) => {
+    try {
+        const [reservations] = await db.query(
+            `SELECT
+                r.reservation_id,
+                r.user_id,
+                r.book_id,
+                r.reservation_date,
+                r.status,
+                u.name AS student_name,
+                b.title AS book_title
+             FROM reservations r
+             JOIN users u ON r.user_id = u.user_id
+             JOIN books b ON r.book_id = b.book_id
+             ORDER BY r.reservation_date DESC`
+        );
+
+        res.status(200).json({
+            success: true,
+            count: reservations.length,
+            reservations
+        });
+
+    } catch (error) {
+        console.error("Get all reservations error:", error);
+
+        res.status(500).json({
+            success: false,
+            message: "Error fetching reservations"
+        });
+    }
+};
+
+
+// ======================================
+// UPDATE RESERVATION STATUS (ADMIN)
+// ======================================
+const updateReservationStatus = async (req, res) => {
+    try {
+        const reservationId = req.params.id;
+        const { status } = req.body;
+
+        if (!["approved", "rejected"].includes(status)) {
+            return res.status(400).json({
+                success: false,
+                message: "Status must be approved or rejected"
+            });
+        }
+
+        const [result] = await db.query(
+            `UPDATE reservations
+             SET status = ?
+             WHERE reservation_id = ? AND status = 'pending'`,
+            [status, reservationId]
+        );
+
+        if (result.affectedRows === 0) {
+            return res.status(404).json({
+                success: false,
+                message: "Pending reservation not found"
+            });
+        }
+
+        res.status(200).json({
+            success: true,
+            message: `Reservation ${status} successfully`
+        });
+
+    } catch (error) {
+        console.error("Update reservation error:", error);
+
+        res.status(500).json({
+            success: false,
+            message: "Error updating reservation"
+        });
+    }
+};
+
+
+
 module.exports = {
     createReservation,
-    getMyReservations
+    getMyReservations,
+    getAllReservations,
+    updateReservationStatus
 };
+

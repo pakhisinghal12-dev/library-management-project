@@ -195,9 +195,50 @@ const returnBook = async (req, res) => {
 
 
 // ======================================
+// 3. GET ALL ISSUE RECORDS
+// ======================================
+const getAllIssues = async (req, res) => {
+    try {
+        const [issues] = await db.query(
+            `SELECT
+                ib.issue_id,
+                ib.user_id,
+                ib.book_id,
+                u.name AS student_name,
+                b.title AS book_title,
+                ib.issue_date,
+                ib.due_date,
+                ib.return_date,
+                ib.status
+             FROM issued_books ib
+             JOIN users u ON ib.user_id = u.user_id
+             JOIN books b ON ib.book_id = b.book_id
+             ORDER BY ib.issue_id DESC`
+        );
+
+        res.status(200).json({
+            success: true,
+            count: issues.length,
+            issues
+        });
+
+    } catch (error) {
+        console.error("Fetch issues error:", error);
+
+        res.status(500).json({
+            success: false,
+            message: "Failed to fetch issue records"
+        });
+    }
+};
+
+
+
+// ======================================
 // EXPORT BOTH FUNCTIONS
 // ======================================
 module.exports = {
     issueBook,
-    returnBook
+    returnBook,
+    getAllIssues
 };
