@@ -34,7 +34,7 @@ loginForm.addEventListener("submit", async (event) => {
         } 
         else if (data.user.role === "student") {
             alert("Student login successful!");
-            window.location.href = "student.html";
+            window.location.href = "student-dashboard.html";
         } 
         else {
             alert("Invalid account role.");
