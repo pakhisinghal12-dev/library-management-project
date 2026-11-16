@@ -26,6 +26,9 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+.nav img{
+  width:65px;
+}
 .container{
     display: flex;
     justify-content: space-between;
