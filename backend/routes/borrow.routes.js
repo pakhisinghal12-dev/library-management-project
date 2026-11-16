@@ -7,7 +7,8 @@ const verifyToken = require("../middleware/auth.middleware");
 const {
     issueBook,
     returnBook,
-    getAllIssues
+    getAllIssues,
+    getMyIssues
 } = require("../controllers/borrow.controller");
 
 // Only admins can issue and return books
@@ -22,13 +23,16 @@ const requireAdmin = (req, res, next) => {
     next();
 };
 
-// Get all issue records
+// Student: Get only their own issue records
+router.get("/my", verifyToken, getMyIssues);
+
+// Admin: Get all issue records
 router.get("/", verifyToken, requireAdmin, getAllIssues);
 
-// Issue a book
+// Admin: Issue a book
 router.post("/issue", verifyToken, requireAdmin, issueBook);
 
-// Return a book
+// Admin: Return a book
 router.put("/return/:id", verifyToken, requireAdmin, returnBook);
 
 module.exports = router;

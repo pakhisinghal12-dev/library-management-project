@@ -233,12 +233,53 @@ const getAllIssues = async (req, res) => {
 };
 
 
+// ======================================
+// 4. GET LOGGED-IN STUDENT'S ISSUE RECORDS
+// ======================================
+const getMyIssues = async (req, res) => {
+    try {
+        const [issues] = await db.query(
+            `SELECT
+                ib.issue_id,
+                ib.user_id,
+                ib.book_id,
+                b.title AS book_title,
+                ib.issue_date,
+                ib.due_date,
+                ib.return_date,
+                ib.status
+             FROM issued_books ib
+             JOIN books b ON ib.book_id = b.book_id
+             WHERE ib.user_id = ?
+             ORDER BY ib.issue_id DESC`,
+            [req.user.user_id]
+        );
+
+        res.status(200).json({
+            success: true,
+            count: issues.length,
+            issues
+        });
+
+    } catch (error) {
+        console.error("Fetch student issues error:", error);
+
+        res.status(500).json({
+            success: false,
+            message: "Failed to fetch your issue records"
+        });
+    }
+};
+
 
 // ======================================
 // EXPORT BOTH FUNCTIONS
 // ======================================
+
 module.exports = {
     issueBook,
     returnBook,
-    getAllIssues
+    getAllIssues,
+    getMyIssues
 };
+

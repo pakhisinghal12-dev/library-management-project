@@ -17,6 +17,46 @@ const requireAdmin = (req, res, next) => {
     next();
 };
 
+
+ // ======================================
+ // GET FINES FOR LOGGED-IN STUDENT
+ // ======================================
+router.get("/my", verifyToken, async (req, res) => {
+    try {
+        const [fines] = await db.query(`
+            SELECT
+                f.fine_id,
+                f.issue_id,
+                f.amount,
+                f.status,
+                f.created_at,
+                b.title AS book_title,
+                ib.due_date,
+                ib.return_date
+            FROM fines f
+            JOIN issued_books ib ON f.issue_id = ib.issue_id
+            JOIN books b ON ib.book_id = b.book_id
+            WHERE ib.user_id = ?
+            ORDER BY f.created_at DESC
+        `, [req.user.user_id]);
+
+        res.status(200).json({
+            success: true,
+            count: fines.length,
+            fines
+        });
+
+    } catch (error) {
+        console.error("Fetch student fines error:", error);
+
+        res.status(500).json({
+            success: false,
+            message: "Failed to fetch your fines"
+        });
+    }
+});
+
+
 // ======================================
 // 1. GET ALL FINES
 // ======================================
